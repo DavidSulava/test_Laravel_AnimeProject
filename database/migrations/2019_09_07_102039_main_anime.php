@@ -13,7 +13,7 @@ class MainAnime extends Migration
      */
     public function up()
     {
-        Schema::table('anime_main', function (Blueprint $table) {
+        Schema::create('anime_main', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title', 150);
             $table->string('aired', 40)->nullable();
@@ -41,8 +41,6 @@ class MainAnime extends Migration
      */
     public function down()
     {
-        Schema::table('anime_main', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('anime_main');
     }
 }

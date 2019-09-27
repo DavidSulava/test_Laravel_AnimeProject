@@ -13,7 +13,7 @@ class AnimeMainHasDirecrors extends Migration
      */
     public function up()
     {
-        Schema::table('usersanime_main_has_direcrors', function (Blueprint $table) {
+        Schema::create('usersanime_main_has_direcrors', function (Blueprint $table) {
             //
             $table->index('Anime_main_id');
             $table->index('director_id');
@@ -37,8 +37,6 @@ class AnimeMainHasDirecrors extends Migration
      */
     public function down()
     {
-        Schema::table('usersanime_main_has_direcrors', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('usersanime_main_has_direcrors');
     }
 }

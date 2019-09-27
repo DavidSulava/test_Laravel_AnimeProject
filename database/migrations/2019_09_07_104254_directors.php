@@ -13,7 +13,7 @@ class Directors extends Migration
      */
     public function up()
     {
-        Schema::table('directors', function (Blueprint $table) {
+        Schema::create('directors', function (Blueprint $table) {
             //
             $table->bigIncrements('id');
             $table->string('name', 150)->nullable();
@@ -27,8 +27,6 @@ class Directors extends Migration
      */
     public function down()
     {
-        Schema::table('directors', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('directors');
     }
 }

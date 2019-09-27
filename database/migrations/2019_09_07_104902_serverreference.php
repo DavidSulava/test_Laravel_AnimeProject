@@ -13,7 +13,7 @@ class Serverreference extends Migration
      */
     public function up()
     {
-        Schema::table('serverreference', function (Blueprint $table) {
+        Schema::create('serverreference', function (Blueprint $table) {
             //
             $table->bigIncrements('id');
             $table->string('name', 60)->nullable();
@@ -28,8 +28,6 @@ class Serverreference extends Migration
      */
     public function down()
     {
-        Schema::table('serverreference', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('serverreference');
     }
 }

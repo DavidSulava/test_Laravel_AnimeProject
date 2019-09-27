@@ -13,7 +13,7 @@ class AnimeMainHasGenre extends Migration
      */
     public function up()
     {
-        Schema::table('anime_main_has_genre', function (Blueprint $table) {
+        Schema::create('anime_main_has_genre', function (Blueprint $table) {
             //
             $table->index('Anime_main_id');
             $table->index('genre_id');
@@ -37,8 +37,6 @@ class AnimeMainHasGenre extends Migration
      */
     public function down()
     {
-        Schema::table('anime_main_has_genre', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('anime_main_has_genre');
     }
 }
