@@ -29,8 +29,8 @@ class MainAnime extends Migration
             $table->string('episodes', 5)->nullable();
             $table->string('status', 15)->nullable();
             $table->text('description')->nullable();
-            $table->timestamp('dataUpdated	')->nullable();
-            $table->dateTime('created_at');
+            $table->timestamp('dataUpdated')->nullable();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 

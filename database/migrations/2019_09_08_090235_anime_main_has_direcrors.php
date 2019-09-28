@@ -15,14 +15,15 @@ class AnimeMainHasDirecrors extends Migration
     {
         Schema::create('usersanime_main_has_direcrors', function (Blueprint $table) {
             //
-            $table->index('Anime_main_id');
-            $table->index('director_id');
+            $table->bigInteger('Anime_main_id')->unsigned()->index();
+
 
             $table->foreign('Anime_main_id')
                   ->references('id')->on('anime_main')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 
+            $table->bigInteger('director_id')->unsigned()->index();
             $table->foreign('director_id')
                   ->references('id')->on('directors')
                   ->onDelete('cascade')

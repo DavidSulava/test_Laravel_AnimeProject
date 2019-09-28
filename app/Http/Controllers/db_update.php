@@ -15,7 +15,6 @@ ini_set('memory_limit',-1);
 
 class DB_Update extends Controller
 {
-    public $code     = 'Sula';
 
     function __construct(Request $request)
         {
@@ -29,6 +28,9 @@ class DB_Update extends Controller
             $this->movies_genres      = config('custom_glob.movies_genres');//$this->movirs_genres
             $this->table_Server       = config('custom_glob.table_Server');
             $this->movies_Server      = config('custom_glob.movies_Server');
+
+            $this->code               = config('custom_glob.update_code');
+            $this->dataSource         = config('custom_glob.dataSource');
 
         }
 
@@ -280,7 +282,7 @@ class DB_Update extends Controller
         // Process
         if($this->code == $code)
         {
-            $string = file_get_contents("https://parse-prs.herokuapp.com/body?SulaAnime=get");
+            $string = file_get_contents( $this->dataSource );
             $data   = json_decode($string, true);
 
             for ($i=0; $i < count($data); $i++)

@@ -17,6 +17,10 @@ return [
     'counter'            => 'counter',
 
 
+    //-- Data Source
+    'update_code'=> 'bd_Update_Code',
+    'dataSource' => 'https://parse-prs.herokuapp.com/body?SulaAnime=get', // Just for Example
+
 
     // CAPCHA
     'capcha' => [

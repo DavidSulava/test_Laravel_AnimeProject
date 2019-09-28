@@ -15,14 +15,13 @@ class AnimeMainHasServerreference extends Migration
     {
         Schema::create('anime_main_has_serverreference', function (Blueprint $table) {
             //
-            $table->index('Anime_main_id');
-            $table->index('serverReference_id');
-
+            $table->bigInteger('Anime_main_id')->unsigned()->index();
             $table->foreign('Anime_main_id')
                   ->references('id')->on('anime_main')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 
+            $table->bigInteger('serverReference_id')->unsigned()->index();
             $table->foreign('serverReference_id')
                   ->references('id')->on('serverreference')
                   ->onDelete('cascade')
