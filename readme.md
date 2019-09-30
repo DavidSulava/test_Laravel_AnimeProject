@@ -12,7 +12,9 @@
    ```sh
     php artisan migrate
    ```
-
+3) You can add a source to update your database (data must be in JSON format).
+This should be set in the .env file at the DB_UPDATE_SOURCE variable.
+To update your database you need to execute a request similar to this  -> "http://YourSite/public/dbUpdate?code=bd_Update_Code".
 
 
 

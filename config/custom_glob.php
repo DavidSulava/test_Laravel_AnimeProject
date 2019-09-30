@@ -18,14 +18,14 @@ return [
 
 
     //-- Data Source
-    'update_code'=> 'bd_Update_Code',
-    'dataSource' => 'https://parse-prs.herokuapp.com/body?SulaAnime=get', // Just for Example
+    'update_code'=> env( 'DB_UPDATE_SECRET_CODE' ),
+    'dataSource' => env( 'DB_UPDATE_SOURCE' ),
 
 
     // CAPCHA
     'capcha' => [
-                    'siteKay'   => env('SITE_KEY'),
-                    'secretKey' => env('SECRET_KEY')
+                    'siteKay'   => env( 'SITE_KEY', false ),
+                    'secretKey' => env( 'SECRET_KEY', false )
                 ],
 
 
