@@ -6,13 +6,22 @@
 </p>
 
 ## How to make it work
-
-1) Setup a database variables in the .env  file (and all other ones depending on your need).
-2) Run the migrations to create tables in your database:
+1) Install all composer dependencies by running the command:
+    ```sh
+    php composer.phar install
+    ```
+2) Generate a random app kay
+   ```sh
+    php artisan key:generate
+    php artisan config:clear
+    php artisan config:cache
+    ```
+3) Setup a database variables in the .env  file (and all other ones depending on your need).
+4) Run migrations to create tables in your database:
    ```sh
     php artisan migrate
    ```
-3) You can add a source to update your database (data must be in JSON format).
+5) You can add a source to update your database (data must be in JSON format).
 This should be set in the .env file at the DB_UPDATE_SOURCE variable.
 To update your database you need to execute a request similar to this  -> http://YourSite/public/dbUpdate?code=bd_Update_Code.
 
