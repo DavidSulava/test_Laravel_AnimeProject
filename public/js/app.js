@@ -17477,7 +17477,7 @@ function _getFetch() {
         inMeth,
         inPayload,
         csrf_token,
-        api_default,
+        prs_prevent_token,
         resp,
         _args2 = arguments;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
@@ -17492,7 +17492,7 @@ function _getFetch() {
             inPayload = payload ? JSON.stringify(payload) : null;
             ul = searchValue ? ul + searchValue : ul;
             csrf_token = document.querySelector("meta[name='csrf-token']").getAttribute('content');
-            api_default = document.querySelector("meta[name='api_default']").getAttribute('content');
+            prs_prevent_token = document.querySelector("meta[name='prs_prevent_token']").getAttribute('content');
             _context2.next = 11;
             return fetch(ul, {
               method: inMeth,
@@ -17502,7 +17502,7 @@ function _getFetch() {
                 // 'Content-Type': 'application/x-www-form-urlencoded', // "application/x-www-form-urlencoded"
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrf_token,
-                'Api-Default': api_default
+                'prs_prevent_token': prs_prevent_token
               }
             })["catch"](function (er) {
               return console.log(er);

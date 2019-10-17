@@ -11,7 +11,7 @@
     <meta name="keywords" content="watch movies online, free movies online, free hd movies, full hd movies, best site for movies, watch free movies online, streaming free movies, full hd movies, free movies, cinema movies, movies in theaters now, free tv series, free anime series, putlocker, megashare9, megashare, hdmovie14, project free tv, 123movies, primewire, letmewatchthis, sockshare">
 
 	<meta name="csrf-token"  content="{{ csrf_token() }}">
-	<meta name="api_default" content= <?= session()->get('API')['default'] ?> >
+	<meta name="prs_prevent_token" content= <?= session()->get('prs_prevent_token')['default'] ?> >
 	<meta name="root_url_f"  content= <?= url()->full() ?> >
 
 

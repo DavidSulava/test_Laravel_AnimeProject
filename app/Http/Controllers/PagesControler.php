@@ -20,11 +20,12 @@ class PagesControler extends Controller
     public function index( Request $request )
         {
 
-            $API_token = hash('sha256', Str::random(60) );
+            //--Test feature to prevent data parsing
+            $prs_prevent_token = hash('sha256', Str::random(60) );
 
-            isset($request->session('API')->default) ? TRUE : session( ['API' => ['default' => $API_token ] ] );
+            isset($request->session('prs_prevent_token')->default) ? TRUE : session( ['prs_prevent_token' => ['default' => $prs_prevent_token ] ] );
 
-            return view( "index", compact( 'API_token' ) );
+            return view( "index", compact( 'prs_prevent_token' ) );
         }
 
     public function getMovie( Request $request )

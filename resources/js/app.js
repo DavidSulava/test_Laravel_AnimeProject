@@ -154,7 +154,7 @@ async function getFetch ( ul, meth=null,  payload=null, searchValue=null, loadin
         ul = searchValue? ul+searchValue : ul;
 
         var csrf_token  = document.querySelector("meta[name='csrf-token']").getAttribute('content');
-        let api_default = document.querySelector("meta[name='api_default']").getAttribute('content');
+        let prs_prevent_token = document.querySelector("meta[name='prs_prevent_token']").getAttribute('content');
 
 
         let resp = await fetch( ul,
@@ -163,9 +163,9 @@ async function getFetch ( ul, meth=null,  payload=null, searchValue=null, loadin
                 body   : inPayload, // data can be `string` or {object}!
                 headers: {
                             // 'Content-Type': 'application/x-www-form-urlencoded', // "application/x-www-form-urlencoded"
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': csrf_token,
-                            'Api-Default' : api_default
+                            'Content-Type'      : 'application/json',
+                            'X-CSRF-TOKEN'      : csrf_token,
+                            'prs_prevent_token' : prs_prevent_token
                          }
 
             }).catch(er=>console.log(er) )
